@@ -1,0 +1,7 @@
+Django>=3.0,<4.0
+psycopg2-binary>=2.8
+django_compressor==2.4
+django-libsass==0.8
+django-bootstrap4
+django-jquery
+django-fontawesome-5

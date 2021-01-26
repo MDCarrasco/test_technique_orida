@@ -1,0 +1,583 @@
+/* line 1, todomaker/static/css/style.scss */
+* {
+  box-sizing: border-box; }
+
+/* line 4, todomaker/static/css/style.scss */
+html, body {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(50% 16%, circle, #219e8a 32%, #0b6e6c 88%);
+  font-family: 'Khand', sans-serif;
+  font-size: 18px; }
+
+/* line 11, todomaker/static/css/style.scss */
+.formcontainer {
+  width: 320px;
+  height: 320px;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to bottom, #0c6964 16%, #219e6f 95%);
+  box-shadow: 0 4px 36px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  overflow: hidden; }
+
+/* line 26, todomaker/static/css/style.scss */
+#add_to_container {
+  position: relative;
+  left: 400; }
+
+/* line 32, todomaker/static/css/style.scss */
+.header {
+  color: #f8f8f8; }
+  /* line 36, todomaker/static/css/style.scss */
+  .header h1 {
+    user-select: none;
+    border-radius: 8px;
+    width: 24px;
+    height: 36px;
+    text-indent: 40px;
+    white-space: nowrap;
+    position: relative;
+    margin-left: 16px;
+    margin-top: 6px;
+    line-height: 36px; }
+    /* line 49, todomaker/static/css/style.scss */
+    .header h1::before {
+      cursor: pointer;
+      box-sizing: border-box;
+      width: 14px;
+      height: 20px;
+      display: block;
+      content: "";
+      position: absolute;
+      border-right: 5px solid #000;
+      border-bottom: 5px solid #000;
+      transform: rotate(45deg);
+      bottom: 0px;
+      left: 5px;
+      z-index: 2;
+      box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.2);
+      transition: bottom 0.1s; }
+    /* line 67, todomaker/static/css/style.scss */
+    .header h1::after {
+      cursor: pointer;
+      box-sizing: border-box;
+      width: 14px;
+      height: 20px;
+      display: block;
+      content: "";
+      position: absolute;
+      border-right: 5px solid #fff;
+      border-bottom: 5px solid #fff;
+      transform: rotate(45deg);
+      bottom: 21px;
+      left: 5px;
+      box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.2);
+      z-index: 100;
+      transition: bottom 0.2s; }
+    /* line 86, todomaker/static/css/style.scss */
+    .header h1 span::before {
+      cursor: pointer;
+      /*
+        content:"";
+        display:block;
+        position:absolute;
+        top:4px;
+        left:3px;
+        width:5px;
+        height:26px;
+        background:#ccc;
+        transform:rotate(-45deg);
+        z-index:1;
+        */
+      box-sizing: border-box;
+      width: 14px;
+      height: 20px;
+      display: block;
+      content: "";
+      position: absolute;
+      border-right: 5px solid #dadada;
+      border-bottom: 5px solid #dadada;
+      transform: rotate(45deg);
+      bottom: 14px;
+      left: 5px;
+      z-index: 3;
+      box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.2);
+      transition: bottom 0.2s; }
+    /* line 116, todomaker/static/css/style.scss */
+    .header h1 span::after {
+      cursor: pointer;
+      /*
+        content:"";
+        display:block;
+        position:absolute;
+        top:4px;
+        left:3px;
+        width:5px;
+        height:26px;
+        background:#ccc;
+        transform:rotate(-45deg);
+        z-index:1;
+        */
+      box-sizing: border-box;
+      width: 14px;
+      height: 20px;
+      display: block;
+      content: "";
+      position: absolute;
+      border-right: 5px solid #aeaeae;
+      border-bottom: 5px solid #aeaeae;
+      transform: rotate(45deg);
+      bottom: 7px;
+      left: 5px;
+      z-index: 2;
+      box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.2);
+      transition: bottom 0.2s; }
+    /* line 152, todomaker/static/css/style.scss */
+    .header h1.click::after {
+      bottom: 18px; }
+    /* line 156, todomaker/static/css/style.scss */
+    .header h1.click span::before {
+      bottom: 12px; }
+    /* line 159, todomaker/static/css/style.scss */
+    .header h1.click span::after {
+      bottom: 6px; }
+
+/* line 167, todomaker/static/css/style.scss */
+footer {
+  width: 100%;
+  height: 48px;
+  position: absolute;
+  bottom: -48px;
+  left: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0 0 8px 8px;
+  transition: bottom 0.2s, opacity 0.2s; }
+  /* line 179, todomaker/static/css/style.scss */
+  footer.active {
+    bottom: 0; }
+    /* line 182, todomaker/static/css/style.scss */
+    footer.active #delete {
+      cursor: pointer; }
+
+/* line 187, todomaker/static/css/style.scss */
+.my-func {
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+  width: 48px;
+  height: 48px;
+  overflow: hidden; }
+  /* line 194, todomaker/static/css/style.scss */
+  .my-func #delete {
+    border: none;
+    border-radius: 4px 4px 0 0;
+    background: none;
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    top: 0;
+    left: 0; }
+    /* line 208, todomaker/static/css/style.scss */
+    .my-func #delete:focus {
+      outline: none; }
+    /* line 212, todomaker/static/css/style.scss */
+    .my-func #delete .d-parts1 {
+      display: block;
+      width: 12px;
+      height: 8px;
+      border-top: 2px solid #f8f8f8;
+      border-left: 2px solid #f8f8f8;
+      border-right: 2px solid #f8f8f8;
+      border-radius: 2px 2px 0 0;
+      position: absolute;
+      top: 10px;
+      right: 0;
+      left: 0;
+      margin: 0 auto;
+      transition: top 0.2s; }
+      /* line 227, todomaker/static/css/style.scss */
+      .my-func #delete .d-parts1::before {
+        content: "";
+        display: block;
+        width: 28px;
+        height: 2px;
+        background: #f8f8f8;
+        position: absolute;
+        top: 4px;
+        left: -10px; }
+      /* line 237, todomaker/static/css/style.scss */
+      .my-func #delete .d-parts1::after {
+        display: block;
+        width: 16px;
+        height: 2px;
+        background: #f8f8f8;
+        position: absolute;
+        top: 24px;
+        left: -4px;
+        border-radius: 0 0 4px 4px; }
+    /* line 250, todomaker/static/css/style.scss */
+    .my-func #delete .d-parts2 {
+      display: block;
+      width: 2px;
+      height: 20px;
+      background: #f8f8f8;
+      position: absolute;
+      top: 16px;
+      left: 15px;
+      transform: rotate(-5deg); }
+      /* line 259, todomaker/static/css/style.scss */
+      .my-func #delete .d-parts2::after {
+        content: "";
+        display: block;
+        width: 2px;
+        height: 20px;
+        background: #f8f8f8;
+        position: absolute;
+        top: 2px;
+        right: -16px;
+        transform: rotate(10deg); }
+    /* line 273, todomaker/static/css/style.scss */
+    .my-func #delete .d-parts3 {
+      display: block;
+      width: 16px;
+      height: 2px;
+      background: #f8f8f8;
+      position: absolute;
+      top: 36px;
+      left: 16px;
+      border-radius: 0 0 4px 4px; }
+  /* line 288, todomaker/static/css/style.scss */
+  .my-func.active #delete {
+    top: 0px;
+    opacity: 1;
+    cursor: pointer; }
+  /* line 298, todomaker/static/css/style.scss */
+  .my-func.hover #delete .d-parts1 {
+    display: block;
+    width: 12px;
+    height: 8px;
+    border-top: 2px solid #f8f8f8;
+    border-left: 2px solid #f8f8f8;
+    border-right: 2px solid #f8f8f8;
+    border-radius: 2px 2px 0 0;
+    position: absolute;
+    top: 6px;
+    right: 0;
+    left: 0;
+    margin: 0 auto; }
+
+/* line 320, todomaker/static/css/style.scss */
+.my-form {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 100; }
+  /* line 327, todomaker/static/css/style.scss */
+  .my-form .todo-form {
+    background: #fff;
+    border-radius: 8px 8px 0 0;
+    height: 48px; }
+  /* line 332, todomaker/static/css/style.scss */
+  .my-form .icn-input {
+    display: block;
+    position: absolute;
+    width: 8px;
+    height: 18px;
+    background: #0b6e6c;
+    transform: rotate(45deg);
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 25px; }
+    /* line 343, todomaker/static/css/style.scss */
+    .my-form .icn-input::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 1px;
+      height: 14px;
+      background: #fff;
+      top: 2px;
+      left: 2px;
+      z-index: 3; }
+    /* line 354, todomaker/static/css/style.scss */
+    .my-form .icn-input::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 0px;
+      height: 4px;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 4px solid #0b6e6c;
+      top: 18px;
+      left: 0; }
+  /* line 368, todomaker/static/css/style.scss */
+  .my-form .todo-input {
+    width: 272px;
+    border: none;
+    font-size: 1rem;
+    font-family: 'Khand', sans-serif;
+    padding-left: 3rem;
+    line-height: 48px;
+    background: none;
+    position: relative;
+    transition: padding-left 0.2s; }
+    /* line 379, todomaker/static/css/style.scss */
+    .my-form .todo-input:focus {
+      outline: none;
+      padding-left: 1rem; }
+  /* line 384, todomaker/static/css/style.scss */
+  .my-form .todo-add {
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    display: block;
+    position: absolute;
+    top: 2px;
+    right: 0;
+    overflow: hidden;
+    text-indent: 9999px;
+    background: none;
+    border: none;
+    opacity: 1;
+    transition: top 0.2s, opacity 0.2s; }
+    /* line 399, todomaker/static/css/style.scss */
+    .my-form .todo-add:focus {
+      outline: none; }
+    /* line 403, todomaker/static/css/style.scss */
+    .my-form .todo-add span {
+      display: block;
+      width: 36px;
+      height: 36px;
+      position: absolute;
+      top: 4px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      border-radius: 48px;
+      background: #219e8a;
+      line-height: 1;
+      box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+      transition: width 0.2s ease-out, height 0.2s ease-out, margin 0.2s ease-in; }
+      /* line 418, todomaker/static/css/style.scss */
+      .my-form .todo-add span::after {
+        content: "";
+        display: block;
+        width: 36px;
+        height: 36px;
+        background: #219e8a;
+        border-radius: 36px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        transition: left 0.2s,width 0.2s, height 0.2s, background 0.2s; }
+    /* line 436, todomaker/static/css/style.scss */
+    .my-form .todo-add::before {
+      width: 10px;
+      height: 10px;
+      display: block;
+      content: "";
+      position: absolute;
+      border-right: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      border-radius: 0 0 4px 0;
+      top: 14px;
+      left: 18px;
+      transition: transform 0.2s ease-out;
+      z-index: 5; }
+    /* line 453, todomaker/static/css/style.scss */
+    .my-form .todo-add::after {
+      width: 0px;
+      height: 0px;
+      display: block;
+      content: "";
+      position: absolute;
+      border-right: 6px solid #fff;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      top: 19px;
+      left: 14px;
+      margin: auto;
+      transition: transform 0.2s ease-out; }
+    /* line 482, todomaker/static/css/style.scss */
+    .my-form .todo-add.click span::after {
+      width: 48px;
+      height: 48px;
+      left: -6px;
+      background: rgba(33, 158, 138, 0); }
+    /* line 491, todomaker/static/css/style.scss */
+    .my-form .todo-add.clickdone span::after {
+      width: 36px;
+      height: 36px;
+      left: 0px; }
+    /* line 499, todomaker/static/css/style.scss */
+    .my-form .todo-add.not-focused {
+      top: 24px;
+      opacity: 0;
+      curosur: default; }
+
+/* line 510, todomaker/static/css/style.scss */
+li.complete {
+  text-decoration: line-through; }
+
+/* line 514, todomaker/static/css/style.scss */
+.checkbox {
+  cursor: pointer;
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+  border: 2px solid #F8f8f8;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 16px; }
+
+/* line 530, todomaker/static/css/style.scss */
+.complete .checkbox {
+  background: #f8f8f8; }
+  /* line 533, todomaker/static/css/style.scss */
+  .complete .checkbox::after {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 10px;
+    border-right: 2px solid #219e8a;
+    border-bottom: 2px solid #219e8a;
+    transform: rotate(45deg);
+    position: absolute;
+    left: 7px;
+    top: 3px; }
+
+/* line 549, todomaker/static/css/style.scss */
+.dragable {
+  cursor: move;
+  display: block;
+  position: absolute;
+  width: 36px;
+  height: 18px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto; }
+  /* line 561, todomaker/static/css/style.scss */
+  .dragable::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 18px;
+    height: 14px;
+    top: 0;
+    right: 0;
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5); }
+  /* line 573, todomaker/static/css/style.scss */
+  .dragable::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 18px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.5);
+    top: 8px;
+    right: 0; }
+
+/* line 585, todomaker/static/css/style.scss */
+.remove {
+  cursor: pointer;
+  width: 24px;
+  height: 48px;
+  display: none;
+  position: absolute;
+  right: 28px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  opacity: 0.5; }
+  /* line 598, todomaker/static/css/style.scss */
+  .remove::after {
+    position: absolute;
+    right: 11px;
+    top: 12px;
+    content: "";
+    display: block;
+    width: 2px;
+    height: 24px;
+    background: #f8f8f8;
+    transform: rotate(45deg); }
+  /* line 609, todomaker/static/css/style.scss */
+  .remove::before {
+    position: absolute;
+    right: 0;
+    top: 23px;
+    content: "";
+    display: block;
+    height: 2px;
+    width: 24px;
+    background: #f8f8f8;
+    transform: rotate(45deg); }
+
+/* line 625, todomaker/static/css/style.scss */
+.my-list {
+  position: relative;
+  top: 48px;
+  left: 0;
+  height: 272px;
+  overflow-y: auto;
+  overflow-x: hidden; }
+
+/* line 636, todomaker/static/css/style.scss */
+.clone-list, .todo-list {
+  position: absolute; }
+
+/* line 644, todomaker/static/css/style.scss */
+.ui-sortable-helper {
+  transition: none !important; }
+
+/* line 648, todomaker/static/css/style.scss */
+.li-item {
+  position: relative;
+  list-style: none;
+  width: 320px;
+  background: rgba(255, 255, 255, 0);
+  line-height: 1;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.8333333rem 4rem 0.8333333rem 3rem;
+  box-sizing: border-box;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0);
+  font-weight: 300; }
+  /* line 661, todomaker/static/css/style.scss */
+  .li-item.exclude-me {
+    background: rgba(255, 255, 255, 0.2); }
+
+/* line 668, todomaker/static/css/style.scss */
+.sortable-placeholder {
+  height: 48px;
+  width: 320px;
+  border-left: 2px solid #219e8a;
+  background: rgba(33, 158, 138, 0.2);
+  position: relative;
+  z-index: 6;
+  list-style: none; }
+
+/* line 681, todomaker/static/css/style.scss */
+.clone-list .li-item {
+  position: absolute;
+  z-index: 1; }
+
+/* line 687, todomaker/static/css/style.scss */
+.clone {
+  transition: top 300ms; }
